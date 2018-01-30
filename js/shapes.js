@@ -205,6 +205,17 @@ function Shape(x, y, w, h, fill) {
   // If you dont want to use <body onLoad='init()'>
   // You could uncomment this init() reference and place the script reference inside the body tag
   //init();
+
+  
+
+  var fs = require('fs'); // Load the File System to execute our common tasks (CRUD)
+
+
+  function getfiles(){
+  
+    var files = fs.readdirSync("C:\\Users\\cwiedema\\Downloads\\Volksvalley_V2x.SampleModMap");
+    return files;
+  }
   
   function init() {
     var s = new CanvasState(document.getElementById('canvas1'));
@@ -213,6 +224,14 @@ function Shape(x, y, w, h, fill) {
     // Lets make some partially transparent
     s.addShape(new Shape(80,150,60,30, 'rgba(127, 255, 212, .5)'));
     s.addShape(new Shape(125,80,30,80, 'rgba(245, 222, 179, .7)'));
+
+
+
+   
+      
+     
+    
+
   }
   
   // Now go make something amazing!

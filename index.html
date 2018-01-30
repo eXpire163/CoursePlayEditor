@@ -1,31 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World 2</title>
-    <script src="shapes.js"></script>
+    <title>Photon</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.min.css">
+
+    <!-- Javascript -->
+    <script src="js/shapes.js"></script>
+    
   </head>
   <body onload="init()">
-    <h1>Hello World 2</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div class="window">
 
-	<canvas id="canvas1" width="400" height="300">
-    This text is displayed if your browser does not support HTML5 Canvas.
-   </canvas>
-   <span class="icon icon-doc"></span>
-	
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-      require('./shapes.js')
-    </script>
-	
-	
-	
-	
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Photon</h1>
+      </header>
+
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane pane-sm sidebar">
+            <nav class="nav-group" id="navgroup">
+              <h5 class="nav-group-title">Favorites</h5>
+              <span class="nav-group-item">
+                <span class="icon icon-home"></span>
+                demo1
+              </span>
+              
+            </nav>
+          </div>
+
+          <div class="pane">
+            <table class="table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Kind</th>
+                  <th>Date Modified</th>
+                  <th>Author</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>bars.scss</td>
+                  <td>Document</td>
+                  <td>Oct 13, 2015</td>
+                  <td>connors</td>
+                </tr>
+                
+              </tbody>
+            </table>
+            <h1>Hello World 2</h1>
+            <!-- All of the Node.js APIs are available in this renderer process. -->
+            We are using Node.js <script>document.write(process.versions.node)</script>,
+            Chromium <script>document.write(process.versions.chrome)</script>,
+            and Electron <script>document.write(process.versions.electron)</script>.
+        
+          <canvas id="canvas1" width="400" height="300">
+            This text is displayed if your browser does not support HTML5 Canvas.
+           </canvas>
+           <span class="icon icon-doc"></span>
+          
+            <script>
+              // You can also require other files to run in this process
+              require('js/renderer.js')
+              require('js/shapes.js')
+            </script>
+            <script src="js/filesystem.js"></script>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </body>
 </html>
